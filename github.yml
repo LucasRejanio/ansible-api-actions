@@ -1,0 +1,17 @@
+---
+- name: Start
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Get api_token 
+      shell: aws --profile ci ssm get-parameters --region us-east-1 --names /github/teste --with-decryption --query "Parameters[0].Value"
+      register: api_token
+
+    - debug: msg="{{ api_token.stdout | from_json }}"
+
+    - name: Call api_token in github
+      shell: |
+        curl -u "{{ api_token.stdout | from_json }}:" -X POST -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/LucasRejanio/test-api-actions/actions/workflows/test-api.yml/dispatches -d '{"ref":"main"}'
+      args:
+        warn: no
+      register: result
