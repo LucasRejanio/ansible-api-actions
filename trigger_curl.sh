@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Adicione o seu TOKEN de desenvolvedor:
+# Adicione o seu TOKEN:
 curl -u "TOKEN:" \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
