@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Branch name'
+        branch: "Branch name"
 
 jobs:
   say_hello:
