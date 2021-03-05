@@ -2,17 +2,15 @@ name: Manually triggered workflow
 
 on:
   workflow_dispatch:
-#     inputs:
-#       branch_name:
-#         branch: 'Branch name'
+    inputs:
+      branch_name:
+        branch: 'Branch name'
+        required: false
+        default: 'main'
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-#     - run: |
-#         echo "Hello ${{ github.event.inputs.name }}!
-        
-    - name: get branch
-      run: |
-        echo ${GITHUB_REF##*/}
+    - run: |
+        echo "Hello ${{ github.event.inputs.branch_name }}!
