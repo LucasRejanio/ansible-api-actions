@@ -3,7 +3,7 @@ name: CI
 on:
   workflow_dispatch:
     inputs:
-      release-branch: "test-api"
+      release-branch: 'test-api'
 
 jobs:
   build:
