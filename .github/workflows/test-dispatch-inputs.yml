@@ -2,7 +2,7 @@ name: Manually triggered workflow
 on:
   workflow_dispatch:
     inputs:
-      name:
+      branch_name:
         branch: "Branch name"
 
 jobs:
