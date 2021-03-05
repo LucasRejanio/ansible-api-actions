@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello ${{ github.event.inputs.branch_name }}!
+        echo "Hello ${{ github.event.inputs.branch_name }}!"
