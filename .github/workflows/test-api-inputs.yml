@@ -1,4 +1,4 @@
-name: Manually triggered workflow
+name: Manually triggered workflow inputs
 
 on:
   workflow_dispatch:
@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello ${{ github.event.inputs.branch_name }}!"
+        echo "Branch: ${{ github.event.inputs.branch_name }}!"
