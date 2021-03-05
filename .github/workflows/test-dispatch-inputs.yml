@@ -2,6 +2,7 @@ name: Manually triggered workflow
 on:
   workflow_dispatch:
     inputs:
+      name:
         description: 'Person to greet'
 
 jobs:
