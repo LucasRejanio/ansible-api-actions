@@ -9,7 +9,7 @@
 
     - debug: msg="{{ api_token.stdout | from_json }}"
 
-    ## Se for passar variavel no json do inputs, usar a sintax: "{{ var_name.stdout }}"
+    # Se for passar variavel no json do inputs, usar a sintax: "{{ var_name.stdout }}"
     - name: Call api_token in github
       shell: |
         curl -u "{{ api_token.stdout | from_json }}:" -X POST -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/LucasRejanio/test-api-actions/actions/workflows/test-api.yml/dispatches -d '{"ref":"main"}'
