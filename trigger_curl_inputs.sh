@@ -7,7 +7,7 @@ curl -u "TOKEN:" \
   https://api.github.com/repos/LucasRejanio/ansible-api-actions/actions/workflows/test-api-inputs.yml/dispatches \
   -d '{"ref":"main", "inputs": {"branch_name": "lr-test-api"}}'
 
-## Passando uma variavel
+## Passando uma variavel em shell
 curl -u "TOKEN:" \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
